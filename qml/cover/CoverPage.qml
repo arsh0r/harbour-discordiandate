@@ -33,16 +33,19 @@ import Sailfish.Silica 1.0
 import "../func.js" as Func
 
 CoverBackground {
-    onVisibleChanged: {
-        ddatecover.text = Func.discordianDate(new Date(),true)
+    onStatusChanged: {
+        if (status === Cover.Active) {
+            ddatecover.text = Func.discordianDate(new Date(),true)
+        }
     }
-    Image{
-
+    Image {
         source: "sacred-chao.png"
         anchors.top: parent.top
         anchors.topMargin: 15
         anchors.horizontalCenter: parent.horizontalCenter
         opacity: 0.25
+        width: parent.width //find another solution
+        height: parent.width //find another solution
     }
     Label {
         id: ddatecover

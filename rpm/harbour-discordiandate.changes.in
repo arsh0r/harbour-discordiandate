@@ -8,6 +8,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun Sep 01 2016 arsh0r <arsh0r@posteo.net> 0.2-1
+- Bugfix: show current ddate on CoverPage.
+
 * Sun Aug 28 2016 arsh0r <arsh0r@posteo.net> 0.1-1
 - initial release
 
