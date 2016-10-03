@@ -7,9 +7,52 @@
         <source>Discordian Date</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
-    <name>func</name>
+    <name>Language</name>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Application will quit. Please restart.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>fnord</name>
+    <message>
+        <source>of Chaos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>of Discord</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>of Confusion</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>of Bureaucracy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>of The Aftermath</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <source>Sweetmorn</source>
         <translation type="unfinished"></translation>
@@ -71,27 +114,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>of Chaos</source>
+        <source>in the Year of Our Lady of Discord %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>of Discord</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>of Confusion</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>of Bureaucracy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>of The Aftermath</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>day</source>
+        <source>in the YOLD %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -99,11 +126,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>in the Year of Our Lady of Discord %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>in the YOLD %1</source>
+        <source>day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -116,6 +139,10 @@
     </message>
     <message>
         <source>Celebrate %1!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(week %1)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

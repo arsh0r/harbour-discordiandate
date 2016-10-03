@@ -30,35 +30,39 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import "../fnord.js" as Fnord
 
-CoverBackground {
-    onStatusChanged: {
-        if (status === Cover.Active) {
-            ddatecover.text = Fnord.discordianDate(new Date(),true)
-        }
-    }
-    Image {
-        source: "sacred-chao.png"
-        anchors.top: parent.top
-        anchors.topMargin: 15
-        anchors.horizontalCenter: parent.horizontalCenter
-        opacity: 0.25
-        width: parent.width //find another solution
-        height: parent.width //find another solution
-    }
-    Label {
-        id: ddatecover
-        anchors {
-            left: parent.left
-            right: parent.right
-            bottom: parent.bottom
-            margins: Theme.paddingSmall
-        }
 
-        wrapMode: Text.WordWrap
-        font.pixelSize: Theme.fontSizeSmall
+Page {
+    id: page
+    Column {
+        width: page.width
+        spacing: Theme.paddingLarge
+
+        PageHeader {
+            title: qsTr("Language")
+        }
+        Button {
+            text: qsTr("English")
+            onClicked: {
+                settings.setValue('locale', 'en');
+                Qt.quit();
+            }
+        }
+        Button {
+            text: qsTr("German")
+            onClicked: {
+                settings.setValue('locale', 'de');
+                Qt.quit();
+            }
+        }
+        Label {
+            anchors {
+                left: parent.left
+                right: parent.right
+                margins: Theme.paddingLarge
+            }
+            wrapMode: Text.WordWrap
+            text: qsTr("Application will quit. Please restart.")
+        }
     }
 }
-
-

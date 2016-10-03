@@ -1,6 +1,5 @@
 /*
-  Copyright (C) 2013 Jolla Ltd.
-  Contact: Thomas Perl <thomas.perl@jollamobile.com>
+  Copyright (C) 2013 Thomas Tanghus <thomas@tanghus.net>
   All rights reserved.
 
   You may use this file under the terms of BSD license as follows:
@@ -33,19 +32,34 @@
 #endif
 
 #include <sailfishapp.h>
+#include <QGuiApplication>
+#include <QQuickView>
+#include <QQmlContext>
+#include <QLocale>
+#include <QTranslator>
+#include <QDebug>
+#include "qmlsettings.h"
 
+int main(int argc, char *argv[]) {
+    QGuiApplication *app = SailfishApp::application(argc, argv);
+    QQuickView *view = SailfishApp::createView();
+    QmlSettings *settings = new QmlSettings();
+    QTranslator *translator = new QTranslator;
 
-int main(int argc, char *argv[])
-{
-    // SailfishApp::main() will display "qml/template.qml", if you need more
-    // control over initialization, you can use:
-    //
-    //   - SailfishApp::application(int, char *[]) to get the QGuiApplication *
-    //   - SailfishApp::createView() to get a new QQuickView * instance
-    //   - SailfishApp::pathTo(QString) to get a QUrl to a resource file
-    //
-    // To display the view, call "show()" (will show fullscreen on device).
+    QString locale = settings->value("locale",QLocale::system().name()).toString();
 
-    return SailfishApp::main(argc, argv);
+    if(!translator->load(SailfishApp::pathTo("translations").toLocalFile() + "/" + locale + ".qm")) {
+        qDebug() << "Couldn't load translation";
+    }
+    app->installTranslator(translator);
+
+    QObject::connect((QObject*)view->engine(), SIGNAL(quit()), app, SLOT(quit()));
+
+    view->rootContext()->setContextProperty("settings", settings);
+    view->setSource(SailfishApp::pathTo("qml").toLocalFile() + "/main.qml");
+    //view->showFullScreen();
+    view->show();
+
+    return app->exec();
 }
 

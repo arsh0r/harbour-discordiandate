@@ -39,7 +39,7 @@ function discordianDate(date,cover) {
   cover = cover || false;
 
   if (!cover) {
-    yold = qsTr("in the Year of Our Lady of Discord %1").arg(y + 1166)
+    yold = qsTr("(week %1)").arg(~~((dayOfYear-1)/5)+1) + " " + qsTr("in the Year of Our Lady of Discord %1").arg(y + 1166)
   }
   else {
     yold = qsTr("in the YOLD %1").arg(y + 1166)

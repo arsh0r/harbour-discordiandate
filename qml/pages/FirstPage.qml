@@ -30,7 +30,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import "../func.js" as Func
+import "../fnord.js" as Fnord
 
 Page {
     id: page
@@ -41,12 +41,12 @@ Page {
         anchors.fill: parent
 
         // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
-        /*PullDownMenu {
+        PullDownMenu {
             MenuItem {
-                text: qsTr("Show Page 2")
-                onClicked: pageStack.push(Qt.resolvedUrl("SecondPage.qml"))
+                text: qsTr("Language")
+                onClicked: pageStack.push(Qt.resolvedUrl("Language.qml"))
             }
-        }*/
+        }
 
         // Tell SilicaFlickable the height of its content.
         contentHeight: column.height
@@ -59,8 +59,8 @@ Page {
             width: page.width
             spacing: Theme.paddingLarge
             Component.onCompleted: {
-                ddate.text = Func.discordianDate(usrDate)
-                dtflux.text = Func.daysuntilcelebrate(usrDate)
+                ddate.text = Fnord.discordianDate(usrDate)
+                dtflux.text = Fnord.daysuntilcelebrate(usrDate)
             }
 
             PageHeader {
@@ -81,8 +81,8 @@ Page {
                         usrDate.setDate(dialog.day)
 
                         button.text = usrDate.toDateString()
-                        ddate.text = Func.discordianDate(usrDate)
-                        dtflux.text = Func.daysuntilcelebrate(usrDate)
+                        ddate.text = Fnord.discordianDate(usrDate)
+                        dtflux.text = Fnord.daysuntilcelebrate(usrDate)
                     })
                 }
             }

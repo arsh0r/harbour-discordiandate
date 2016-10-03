@@ -7,9 +7,32 @@
         <source>Discordian Date</source>
         <translation>Diskordianisches Datum</translation>
     </message>
+    <message>
+        <source>Language</source>
+        <translation>Sprache</translation>
+    </message>
 </context>
 <context>
-    <name>func</name>
+    <name>Language</name>
+    <message>
+        <source>Language</source>
+        <translation>Sprache</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>Englisch</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>Deutsch</translation>
+    </message>
+    <message>
+        <source>Application will quit. Please restart.</source>
+        <translation>Anwendung wird beendet. Bitte neustarten.</translation>
+    </message>
+</context>
+<context>
+    <name>fnord</name>
     <message>
         <source>of Chaos</source>
         <translation>des Chaos</translation>
@@ -91,12 +114,8 @@
         <translation>Ausfluss</translation>
     </message>
     <message>
-        <source>St. Tib&apos;s Day</source>
-        <translation>St. Tibs Tag</translation>
-    </message>
-    <message>
-        <source>day</source>
-        <translation>Tag</translation>
+        <source>(week %1)</source>
+        <translation>(Woche %1)</translation>
     </message>
     <message>
         <source>in the Year of Our Lady of Discord %1</source>
@@ -107,16 +126,24 @@
         <translation>im JULD %1</translation>
     </message>
     <message>
+        <source>St. Tib&apos;s Day</source>
+        <translation>St. Tibs Tag</translation>
+    </message>
+    <message>
+        <source>day</source>
+        <translation>Tag</translation>
+    </message>
+    <message>
         <source>%1 days until</source>
         <translation>noch %1 Tage bis</translation>
     </message>
     <message>
-        <source>Celebrate %1!</source>
-        <translation>Lasst uns %1 feiern!</translation>
-    </message>
-    <message>
         <source>%1 day until</source>
         <translation>nur noch %1 Tag bis</translation>
+    </message>
+    <message>
+        <source>Celebrate %1!</source>
+        <translation>Lasst uns %1 feiern!</translation>
     </message>
 </context>
 </TS>

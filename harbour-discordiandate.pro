@@ -14,9 +14,10 @@ TARGET = harbour-discordiandate
 
 CONFIG += sailfishapp
 
-SOURCES += src/harbour-discordiandate.cpp
+SOURCES += src/harbour-discordiandate.cpp \
+    src/qmlsettings.cpp
 
-OTHER_FILES += qml/harbour-discordiandate.qml \
+OTHER_FILES += \
     qml/cover/CoverPage.qml \
     qml/pages/FirstPage.qml \
     rpm/harbour-discordiandate.changes.in \
@@ -35,9 +36,14 @@ CONFIG += sailfishapp_i18n
 # planning to localize your app, remember to comment out the
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
-TRANSLATIONS += translations/harbour-discordiandate-de.ts
+TRANSLATIONS += translations/de.ts
 
 DISTFILES += \
-    qml/func.js \
-    qml/cover/sacred-chao.png
+    qml/cover/sacred-chao.png \
+    qml/fnord.js \
+    qml/pages/Language.qml \
+    qml/main.qml
+
+HEADERS += \
+    src/qmlsettings.h
 

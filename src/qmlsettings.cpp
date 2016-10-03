@@ -1,6 +1,5 @@
 /*
-  Copyright (C) 2013 Jolla Ltd.
-  Contact: Thomas Perl <thomas.perl@jollamobile.com>
+  Copyright (C) 2013 Thomas Tanghus <thomas@tanghus.net>
   All rights reserved.
 
   You may use this file under the terms of BSD license as follows:
@@ -28,37 +27,21 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-import QtQuick 2.0
-import Sailfish.Silica 1.0
-import "../fnord.js" as Fnord
+#include "qmlsettings.h"
 
-CoverBackground {
-    onStatusChanged: {
-        if (status === Cover.Active) {
-            ddatecover.text = Fnord.discordianDate(new Date(),true)
-        }
-    }
-    Image {
-        source: "sacred-chao.png"
-        anchors.top: parent.top
-        anchors.topMargin: 15
-        anchors.horizontalCenter: parent.horizontalCenter
-        opacity: 0.25
-        width: parent.width //find another solution
-        height: parent.width //find another solution
-    }
-    Label {
-        id: ddatecover
-        anchors {
-            left: parent.left
-            right: parent.right
-            bottom: parent.bottom
-            margins: Theme.paddingSmall
-        }
-
-        wrapMode: Text.WordWrap
-        font.pixelSize: Theme.fontSizeSmall
-    }
+QmlSettings::QmlSettings(QObject *parent) :
+    QObject(parent) {
+    _settings = new QSettings("harbour-discordiandate", "discordiandate");
 }
 
+QVariant QmlSettings::value(const QString &key, const QVariant & defaultValue) {
+   QVariant value = _settings->value(key);
+   if(value.isNull()) {
+       value = defaultValue;
+   }
+   return value;
+}
 
+void QmlSettings::setValue(const QString &key, const QVariant &value) {
+   _settings->setValue(key, value);
+}
